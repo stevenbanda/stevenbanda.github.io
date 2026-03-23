@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steven Banda — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steven Banda — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<!-- LOADER -->
+<!-- ══ LOADER ══ -->
 <div id="loader">
   <div class="ld-logo">SB</div>
-  <div class="ld-track"><div class="ld-fill" id="ld-fill"></div></div>
+  <div class="ld-track">
+    <div class="ld-fill" id="ld-fill"></div>
+  </div>
   <div class="ld-text">Loading portfolio</div>
 </div>
 
-<!-- DARK MODE BUTTON -->
+<!-- ══ DARK MODE BUTTON ══ -->
 <div id="dm-btn">
   <span class="dm-ico dm-sun">☀️</span>
   <span class="dm-ico dm-moon">🌙</span>
 </div>
 
-<!-- CURSOR -->
+<!-- ══ CURSOR ══ -->
 <div id="cur"></div>
 <div id="ring"></div>
 <div id="cur-label">VIEW</div>
 
-<!-- VEIL -->
+<!-- ══ VEIL ══ -->
 <div id="veil"></div>
 
-<!-- NAV -->
+<!-- ══ NAV ══ -->
 <nav id="nav">
   <a href="#" class="n-logo" data-go="home">SB</a>
   <ul class="n-links" id="nlinks">
@@ -40,24 +43,60 @@
     <li><a href="#" data-nav="9" data-text="Contact">Contact</a></li>
   </ul>
   <div id="nav-ind"></div>
-  <button class="n-back" id="backBtn" style="display:none"><span>← Back</span></button>
+  <button id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <button class="n-back" id="backBtn">
+    <span>← Back</span>
+  </button>
 </nav>
+
+<!-- ══ MOBILE NAV DRAWER ══ -->
+<div id="nav-drawer">
+  <a href="#" class="drawer-link" data-nav="0">Home</a>
+  <a href="#" class="drawer-link" data-nav="1">About</a>
+  <a href="#" class="drawer-link" data-nav="2">Experience</a>
+  <a href="#" class="drawer-link" data-nav="3">Work</a>
+  <a href="#" class="drawer-link" data-nav="9">Contact</a>
+  <div class="drawer-divider"></div>
+  <div class="drawer-dm">
+    <span>Dark mode</span>
+    <div id="dm-btn-drawer">
+      <span class="dm-ico dm-sun">☀️</span>
+      <span class="dm-ico dm-moon">🌙</span>
+    </div>
+  </div>
+</div>
 
 <div id="dots"></div>
 <div id="pb"></div>
 
-<!-- ══════════════════ HOME ══════════════════ -->
+<!-- ══════════════════════════════════════
+     HOME
+══════════════════════════════════════ -->
 <div class="view active" id="v-home">
 <div class="h-track" id="track">
 
   <!-- 0 HERO -->
   <div class="panel p-hero" data-p="0">
     <div class="ph-right">
-      <svg style="position:absolute;inset:0;width:100%;height:100%;" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg class="hero-wave" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a5fa8"/><stop offset="55%" stop-color="#2d80d4"/><stop offset="100%" stop-color="#4aa3f0"/></linearGradient>
-          <linearGradient id="wg2" x1="0%" y1="0%" x2="80%" y2="100%"><stop offset="0%" stop-color="#4aa3f0" stop-opacity=".65"/><stop offset="100%" stop-color="#8ec8f7" stop-opacity=".8"/></linearGradient>
-          <linearGradient id="wg3" x1="100%" y1="0%" x2="20%" y2="100%"><stop offset="0%" stop-color="#c2e0fb" stop-opacity=".85"/><stop offset="100%" stop-color="#8ec8f7" stop-opacity=".6"/></linearGradient>
+          <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1a5fa8"/>
+            <stop offset="55%" stop-color="#2d80d4"/>
+            <stop offset="100%" stop-color="#4aa3f0"/>
+          </linearGradient>
+          <linearGradient id="wg2" x1="0%" y1="0%" x2="80%" y2="100%">
+            <stop offset="0%" stop-color="#4aa3f0" stop-opacity=".65"/>
+            <stop offset="100%" stop-color="#8ec8f7" stop-opacity=".8"/>
+          </linearGradient>
+          <linearGradient id="wg3" x1="100%" y1="0%" x2="20%" y2="100%">
+            <stop offset="0%" stop-color="#c2e0fb" stop-opacity=".85"/>
+            <stop offset="100%" stop-color="#8ec8f7" stop-opacity=".6"/>
+          </linearGradient>
         </defs>
         <rect width="700" height="700" fill="#eef3f9"/>
         <path d="M580-40C480 30,390 10,340 75C290 140,330 205,265 268C200 330,100 308,62 390C24 472,88 535,48 618C20 678,-30 700,-30 700L760 700L760-40Z" fill="url(#wg1)" opacity=".92"/>
@@ -71,60 +110,104 @@
       </svg>
     </div>
     <div class="ph-left">
-      <div style="animation:fadeUp 1s cubic-bezier(.16,1,.3,1) .2s both">
+      <div class="hero-title-anim">
         <span class="h-t split-target" data-delay-base="0">PORT</span>
         <span class="h-t out split-target" data-delay-base="120">FOLIO</span>
       </div>
-      <div class="h-meta blur-in" style="transition-delay:.9s">
+      <div class="h-meta blur-in hero-meta-delay">
         <div class="h-name">Steven Banda</div>
         <div class="h-disc">Graphic Design &nbsp;/&nbsp; Photography</div>
       </div>
-      <div class="scroll-hint blur-in" style="transition-delay:1.15s">
-        <div class="sh-line"></div><span>Scroll to explore</span>
+      <div class="scroll-hint blur-in hero-hint-delay">
+        <div class="sh-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+      <div class="swipe-hint">
+        <span class="swipe-arrow">←</span>
+        <span>Swipe to explore</span>
+        <span class="swipe-arrow">→</span>
       </div>
     </div>
   </div>
 
   <!-- 1 ABOUT -->
   <div class="panel p-about" data-p="1">
-    <svg class="wv plx" data-plx="-0.2" style="left:-8px;top:0;height:100%;width:165px;opacity:.2;" viewBox="0 0 165 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <svg class="wv plx about-wave" data-plx="-0.2" viewBox="0 0 165 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <path d="M-15 0C45 85,-25 168,55 258C135 348,65 428,108 520C151 612,52 678,82 800L-15 800Z" fill="#2d80d4"/>
       <path d="M-15 110C35 178,-14 248,46 336C106 424,36 495,68 590C100 685,16 740,46 800L-15 800Z" fill="#4aa3f0" opacity=".42"/>
     </svg>
-    <div class="a-label rv" style="padding-left:150px">
-      <span style="display:block" class="split-target" data-delay-base="0">SUMM</span>
-      <span class="dash" style="display:block">—</span>
-      <span style="display:block" class="split-target" data-delay-base="80">ARY</span>
+    <div class="a-label rv a-label-indent">
+      <span class="split-target" data-delay-base="0">SUMM</span>
+      <span class="dash">—</span>
+      <span class="split-target" data-delay-base="80">ARY</span>
     </div>
     <div class="a-body">
       <div class="sec-lbl blur-in rv d1">001 — Profile</div>
-      <p class="blur-in rv d2">A multidisciplinary creative at the intersection of <em>visual design</em> and <em>photographic storytelling</em>.</p>
-      <small class="blur-in rv d3">Based in Windhoek, Namibia. Working globally.<br>Driven by concept, refined by craft.</small>
-      <div class="tag-row rv d4"><span class="tag">3D Design</span><span class="tag">Poster Design</span><span class="tag">Brand Identity</span><span class="tag">Packaging</span><span class="tag">Photography</span><span class="tag">Art Direction</span></div>
+      <p class="blur-in rv d2">
+        A multidisciplinary creative at the intersection of
+        <em>visual design</em> and <em>photographic storytelling</em>.
+      </p>
+      <small class="blur-in rv d3">
+        Based in Windhoek, Namibia. Working globally.<br>
+        Driven by concept, refined by craft.
+      </small>
+      <div class="tag-row rv d4">
+        <span class="tag">3D Design</span>
+        <span class="tag">Poster Design</span>
+        <span class="tag">Brand Identity</span>
+        <span class="tag">Packaging</span>
+        <span class="tag">Photography</span>
+      </div>
     </div>
   </div>
 
   <!-- 2 EXPERIENCE -->
   <div class="panel p-exp" data-p="2">
-    <svg class="wv plx" data-plx="0.15" style="right:-12px;top:0;height:100%;width:145px;opacity:.13;" viewBox="0 0 145 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <svg class="wv plx exp-wave" data-plx="0.15" viewBox="0 0 145 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <path d="M160 0C90 85,150 168,68 258C-14 348,72 428,28 520C-16 612,66 678,36 800L160 800Z" fill="#2d80d4"/>
     </svg>
     <div class="e-top rv">
       <div class="e-h split-target" data-delay-base="0">EXPERIENCE<br>&amp; EDUCATION</div>
-      <div class="sec-lbl" style="align-self:flex-end">002 — Background</div>
+      <div class="sec-lbl e-top-lbl">002 — Background</div>
     </div>
     <div class="e-cols rv d2">
       <div class="e-col">
         <div class="col-h">Experience</div>
-        <div class="ei"><div class="ei-yr">2023 — Present</div><div class="ei-role">Creative Designer</div><div class="ei-org">Freelance / Independent Studio</div></div>
-        <div class="ei"><div class="ei-yr">2022 — 2023</div><div class="ei-role">Junior Art Director</div><div class="ei-org">Brand &amp; Communications Agency</div></div>
-        <div class="ei"><div class="ei-yr">2021 — 2022</div><div class="ei-role">Design Intern</div><div class="ei-org">Creative Production House</div></div>
+        <div class="ei">
+          <div class="ei-yr">Sep 2025 — Present</div>
+          <div class="ei-role">Creative Director</div>
+          <div class="ei-org">Alien Art Studios</div>
+        </div>
+        <div class="ei">
+          <div class="ei-yr">May — Aug 2022</div>
+          <div class="ei-role">Head of Media</div>
+          <div class="ei-org">FaithValley Christian Centre</div>
+        </div>
+        <div class="ei">
+          <div class="ei-yr">2020 — Present</div>
+          <div class="ei-role">Graphic Designer &amp; Photographer</div>
+          <div class="ei-org">Freelance</div>
+        </div>
       </div>
       <div class="e-col">
         <div class="col-h">Education</div>
-        <div class="ei"><div class="ei-yr">2019 — 2022</div><div class="ei-role">BA Graphic Design</div><div class="ei-org">School of Arts &amp; Design</div></div>
-        <div class="ei" style="border:none;padding-top:18px"><div class="ei-yr">Skills</div>
-          <div class="tag-row" style="margin-top:8px"><span class="tag">Blender</span><span class="tag">Cinema 4D</span><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">After Effects</span><span class="tag">Lightroom</span><span class="tag">InDesign</span><span class="tag">Figma</span></div>
+        <div class="ei">
+          <div class="ei-yr">2024 — 2027</div>
+          <div class="ei-role">Diploma in New Media Design</div>
+          <div class="ei-org">College Of The Arts Namibia</div>
+        </div>
+        <div class="ei ei-skills">
+          <div class="ei-yr">Skills</div>
+          <div class="tag-row skills-tags">
+            <span class="tag">Rhino 3D</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">Illustrator</span>
+            <span class="tag">Canva Pro</span>
+            <span class="tag">Lightroom</span>
+            <span class="tag">InDesign</span>
+            <span class="tag">DaVinci Resolve</span>
+            <span class="tag">CapCut Pro</span>
+          </div>
         </div>
       </div>
     </div>
@@ -132,193 +215,778 @@
 
   <!-- 3 WORK OVERVIEW -->
   <div class="panel p-work" data-p="3">
-    <div class="proj-top rv"><div><span class="proj-num">003 — Selected Work</span><div class="proj-h split-target" data-delay-base="0">Work</div></div></div>
-    <div class="work-grid rv d2">
-      <div class="wc wc1" data-open="3d"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-arrow">↗</div><div class="wc-num">01</div><div class="wc-name">3D Design</div><div class="wc-sub">Unseen Opulence</div></div>
-      <div class="wc wc2" data-open="poster"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-arrow">↗</div><div class="wc-num">02</div><div class="wc-name">Poster Design</div><div class="wc-sub">Editorial Series</div></div>
-      <div class="wc wc3" data-open="brand"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-arrow">↗</div><div class="wc-num">03</div><div class="wc-name">Brand Identity</div><div class="wc-sub">Afrocode Café</div></div>
-      <div class="wc wc4" data-open="packaging"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-arrow">↗</div><div class="wc-num">04</div><div class="wc-name">Packaging</div><div class="wc-sub">MOOV</div></div>
-      <div class="wc wc5" data-open="photography"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-arrow">↗</div><div class="wc-num">05</div><div class="wc-name">Photography</div><div class="wc-sub">Visual Archive</div></div>
-    </div>
-  </div>
-
-  <!-- 4 3D -->
-  <div class="panel p-work" style="background:var(--ow)" data-p="4">
-    <div class="proj-top rv"><div><span class="proj-num">003 — Design</span><div class="proj-h">3D<br><span class="out">Design</span></div></div><a class="view-btn" data-open="3d"><span>View Project →</span></a></div>
-    <div style="display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:6px;flex:1;width:100%;border-radius:22px;overflow:hidden;" class="rv d2">
-      <div style="grid-row:span 2;background:linear-gradient(145deg,#0d2540,#0a1830);border-radius:20px;display:flex;flex-direction:column;justify-content:flex-end;padding:32px;position:relative;overflow:hidden;">
-        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(74,163,240,.22),transparent 65%)"></div>
-        <div style="position:absolute;font-family:'Bebas Neue',sans-serif;font-size:170px;color:rgba(255,255,255,.04);bottom:-15px;right:-5px;line-height:1;pointer-events:none">3D</div>
-        <div style="font-size:9px;letter-spacing:.2em;color:var(--bl);text-transform:uppercase;z-index:2;position:relative">Featured Project</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:46px;color:white;z-index:2;position:relative;line-height:1;margin-top:6px">Unseen<br>Opulence</div>
+    <div class="proj-top rv">
+      <div>
+        <span class="proj-num">003 — Selected Work</span>
+        <div class="proj-h split-target" data-delay-base="0">Work</div>
       </div>
-      <div style="background:#e0eaf6;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;transition:background .4s var(--eoe),transform .4s var(--eoe)" onmouseenter="this.style.background='#c2d8f4';this.style.transform='scale(.97)'" onmouseleave="this.style.background='#e0eaf6';this.style.transform=''"><div style="font-size:26px;color:var(--bm);opacity:.4">⬡</div><div style="font-size:9px;letter-spacing:.14em;color:var(--bd);text-transform:uppercase;text-align:center">Product<br>Visualisation</div></div>
-      <div style="background:#e0eaf6;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;transition:background .4s var(--eoe),transform .4s var(--eoe)" onmouseenter="this.style.background='#c2d8f4';this.style.transform='scale(.97)'" onmouseleave="this.style.background='#e0eaf6';this.style.transform=''"><div style="font-size:26px;color:var(--bm);opacity:.4">◎</div><div style="font-size:9px;letter-spacing:.14em;color:var(--bd);text-transform:uppercase;text-align:center">Motion<br>Graphics</div></div>
+    </div>
+    <div class="work-grid rv d2">
+      <div class="wc wc1" data-open="3d">
+        <img class="wc-img" src="images/work-3d.jpg" alt="3D Design">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-arrow">↗</div>
+        <div class="wc-num">01</div>
+        <div class="wc-name">3D Design</div>
+        <div class="wc-sub">Unseen Opulence</div>
+      </div>
+      <div class="wc wc2" data-open="poster">
+        <img class="wc-img" src="images/work-poster.jpg" alt="Poster Design">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-arrow">↗</div>
+        <div class="wc-num">02</div>
+        <div class="wc-name">Poster Design</div>
+        <div class="wc-sub">Editorial Series</div>
+      </div>
+      <div class="wc wc3" data-open="brand">
+        <img class="wc-img" src="images/work-brand.jpg" alt="Brand Identity">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-arrow">↗</div>
+        <div class="wc-num">03</div>
+        <div class="wc-name">Brand Identity</div>
+        <div class="wc-sub">Afrocode Café</div>
+      </div>
+      <div class="wc wc4" data-open="packaging">
+        <img class="wc-img" src="images/work-packaging.jpg" alt="Packaging">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-arrow">↗</div>
+        <div class="wc-num">04</div>
+        <div class="wc-name">Packaging</div>
+        <div class="wc-sub">MOOV</div>
+      </div>
+      <div class="wc wc5" data-open="photography">
+        <img class="wc-img" src="images/work-photography.jpg" alt="Photography">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-arrow">↗</div>
+        <div class="wc-num">05</div>
+        <div class="wc-name">Photography</div>
+        <div class="wc-sub">Visual Archive</div>
+      </div>
     </div>
   </div>
 
-  <!-- 5 POSTER -->
-  <div class="panel p-work" style="background:var(--wh)" data-p="5">
-    <svg class="wv plx" data-plx="-0.25" style="left:0;bottom:0;width:280px;height:200px;opacity:.14;" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 4 3D PANEL -->
+  <div class="panel p-work p-alt" data-p="4">
+    <div class="proj-top rv">
+      <div>
+        <span class="proj-num">003 — Design</span>
+        <div class="proj-h">3D<br><span class="out">Design</span></div>
+      </div>
+      <a class="view-btn" data-open="3d"><span>View Project →</span></a>
+    </div>
+    <div class="panel-3d-grid rv d2">
+      <div class="panel-3d-main">
+        <div class="panel-3d-glow"></div>
+        <div class="panel-3d-bg-text">3D</div>
+        <div class="panel-3d-sub">Featured Project</div>
+        <div class="panel-3d-title">Unseen<br>Opulence</div>
+        <img class="wc-img" src="images/3d-unseen-opulence-hero.jpg" alt="Cultural Prints">
+      </div>
+      <div class="panel-3d-side">
+        <div class="panel-3d-icon">⬡</div>
+        <div class="panel-3d-label">Product<br>Visualisation</div>
+      </div>
+      <div class="panel-3d-side">
+        <div class="panel-3d-icon">◎</div>
+        <div class="panel-3d-label">Motion<br>Graphics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 POSTER PANEL -->
+  <div class="panel p-work p-light" data-p="5">
+    <svg class="wv plx poster-wave" data-plx="-0.25" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
       <path d="M-10 210C45 165,22 112,84 74C146 36,182 88,224 48C266 8,246-18,300-18" stroke="#2d80d4" stroke-width="2.5" fill="none" stroke-linecap="round"/>
       <path d="M-10 185C52 144,34 96,106 58C178 20,206 68,258 28" stroke="#4aa3f0" stroke-width="1.8" fill="none" stroke-linecap="round" opacity=".65"/>
     </svg>
-    <div class="proj-top rv"><div><span class="proj-num">004 — Print</span><div class="proj-h">Poster<br><span class="out">Design</span></div></div><a class="view-btn" data-open="poster"><span>View Project →</span></a></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1;width:100%;" class="rv d2">
-      <div class="wc wc1" style="border-radius:22px"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-num">P—01</div><div class="wc-name">Typographic Series</div></div>
-      <div class="wc wc2" style="border-radius:22px"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-num">P—02</div><div class="wc-name">Event Collateral</div></div>
-      <div class="wc wc3" style="border-radius:22px"><div class="wc-bg"></div><div class="wc-glow"></div><div class="wc-num">P—03</div><div class="wc-name">Cultural Prints</div></div>
+    <div class="proj-top rv">
+      <div>
+        <span class="proj-num">004 — Print</span>
+        <div class="proj-h">Poster<br><span class="out">Design</span></div>
+      </div>
+      <a class="view-btn" data-open="poster"><span>View Project →</span></a>
     </div>
-  </div>
-
-  <!-- 6 BRAND -->
-  <div class="panel p-work" style="background:var(--ow)" data-p="6">
-    <svg class="wv plx" data-plx="0.18" style="right:-5px;top:0;height:100%;width:110px;opacity:.12;" viewBox="0 0 110 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><path d="M120 0C55 82,118 162,48 262C-22 362,75 442,26 562C-12 662,56 700,56 700L120 700Z" fill="#2d80d4"/></svg>
-    <div class="proj-top rv" style="align-items:flex-start"><div><span class="proj-num">005 — Branding</span><div class="proj-h">Brand<br><span class="out">Identity</span></div></div><a class="view-btn" style="margin-top:16px" data-open="brand"><span>View Project →</span></a></div>
-    <div style="display:flex;flex-direction:column;gap:5px;flex:1;max-width:560px;margin-left:80px;justify-content:center;" class="rv d2">
-      <div class="bd-card"><div class="bd-card-icon">▣</div><div class="bd-card-title">Business Card</div><div class="bd-card-sub">Afrocode Café</div></div>
-      <div class="bd-card"><div class="bd-card-icon">@</div><div class="bd-card-title">Email Signature</div><div class="bd-card-sub">HTML format</div></div>
-      <div class="bd-card"><div class="bd-card-icon">◈</div><div class="bd-card-title">Brand Visuals</div><div class="bd-card-sub">Style guide + asset library</div></div>
-      <div class="bd-card"><div class="bd-card-icon">◯</div><div class="bd-card-title">Logo System</div><div class="bd-card-sub">Primary / Secondary / Icon</div></div>
-    </div>
-  </div>
-
-  <!-- 7 PACKAGING -->
-  <div class="panel" style="padding:0;background:var(--wh)" data-p="7">
-    <div style="width:50%;height:100%;background:linear-gradient(145deg,#0a1828,#06101e);display:flex;flex-direction:column;justify-content:flex-end;padding:56px;position:relative;overflow:hidden;border-radius:0 32px 32px 0">
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(74,163,240,.05);letter-spacing:.1em;pointer-events:none;white-space:nowrap" class="plx" data-plx="-0.15">MOOV</div>
-      <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.1" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><path d="M-15 0C65 82,-5 164,78 258C161 352,72 434,118 526C164 618,58 684,92 700L-15 700Z" fill="#4aa3f0"/></svg>
-      <div class="rv" style="position:relative;z-index:2">
-        <div class="sec-lbl" style="color:var(--bl)">006 — Packaging</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:76px;color:white;line-height:.9">PACK—<br>AGING</div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--bb);margin-top:8px">MOOV</div>
-        <div style="font-size:9px;letter-spacing:.2em;color:var(--bl);text-transform:uppercase;margin-top:10px">Packaging Design — Consumer Product</div>
-        <a class="view-btn dk" style="margin-top:28px" data-open="packaging"><span>View Project →</span></a>
+    <div class="poster-preview-grid rv d2">
+      <div class="wc wc1 wc-img-bg">
+        <img class="wc-img" src="images/poster-typographic-1.jpg" alt="Typographic Series">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-num">P—01</div>
+        <div class="wc-name">Advertising</div>
+      </div>
+      <div class="wc wc2 wc-img-bg">
+        <img class="wc-img" src="images/poster-typographic-3.jpg" alt="Event Collateral">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-num">P—02</div>
+        <div class="wc-name">Event Posters</div>
+      </div>
+      <div class="wc wc3 wc-img-bg">
+        <img class="wc-img" src="images/poster-event-b.jpg" alt="Cultural Prints">
+        <div class="wc-overlay"></div>
+        <div class="wc-glow"></div>
+        <div class="wc-num">P—03</div>
+        <div class="wc-name">Editorial Prints</div>
       </div>
     </div>
-    <div style="flex:1;height:100%;display:grid;grid-template-rows:1fr 1fr;gap:4px;padding:4px">
-      <div style="background:var(--ow);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;transition:background .4s ease,transform .4s var(--eoe)" onmouseenter="this.style.background='var(--bx)';this.style.transform='scale(.98)'" onmouseleave="this.style.background='var(--ow)';this.style.transform=''"><div style="font-size:46px;color:rgba(45,128,212,.2)">⬡</div><div style="font-size:9px;letter-spacing:.2em;color:var(--mt);text-transform:uppercase">Structural Design</div></div>
-      <div style="background:var(--ow);border-radius:22px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;transition:background .4s ease,transform .4s var(--eoe)" onmouseenter="this.style.background='var(--bx)';this.style.transform='scale(.98)'" onmouseleave="this.style.background='var(--ow)';this.style.transform=''"><div style="font-size:46px;color:rgba(45,128,212,.2)">◫</div><div style="font-size:9px;letter-spacing:.2em;color:var(--mt);text-transform:uppercase">Print Specification</div></div>
+  </div>
+
+  <!-- 6 BRAND PANEL -->
+  <div class="panel p-work p-alt" data-p="6">
+    <svg class="wv plx brand-wave" data-plx="0.18" viewBox="0 0 110 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M120 0C55 82,118 162,48 262C-22 362,75 442,26 562C-12 662,56 700,56 700L120 700Z" fill="#2d80d4"/>
+    </svg>
+    <div class="proj-top rv proj-top-start">
+      <div>
+        <span class="proj-num">005 — Branding</span>
+        <div class="proj-h">Brand<br><span class="out">Identity</span></div>
+      </div>
+      <a class="view-btn view-btn-top" data-open="brand"><span>View Project →</span></a>
+    </div>
+    <div class="brand-cards-preview rv d2">
+      <div class="bd-card">
+        <div class="bd-card-icon">▣</div>
+        <div class="bd-card-title">Business Card</div>
+        <div class="bd-card-sub">Afrocode Café</div>
+      </div>
+      <div class="bd-card">
+        <div class="bd-card-icon">@</div>
+        <div class="bd-card-title">Email Signature</div>
+        <div class="bd-card-sub">HTML format</div>
+      </div>
+      <div class="bd-card">
+        <div class="bd-card-icon">◈</div>
+        <div class="bd-card-title">Brand Visuals</div>
+        <div class="bd-card-sub">Style guide + asset library</div>
+      </div>
+      <div class="bd-card">
+        <div class="bd-card-icon">◯</div>
+        <div class="bd-card-title">Logo System</div>
+        <div class="bd-card-sub">Primary / Secondary / Icon</div>
+      </div>
     </div>
   </div>
 
-  <!-- 8 PHOTOGRAPHY -->
+  <!-- 7 PACKAGING PANEL -->
+  <div class="panel p-pack" data-p="7">
+    <div class="pack-left">
+      <div class="pack-moov-bg plx" data-plx="-0.15">MOOV</div>
+        <img class="wc-img" src="images/moov-both-variants.jpg" alt="Cultural Prints">
+      <svg class="pack-wave" viewBox="0 0 400 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-15 0C65 82,-5 164,78 258C161 352,72 434,118 526C164 618,58 684,92 700L-15 700Z" fill="#4aa3f0"/>
+      </svg>
+      <div class="rv pack-content">
+        <div class="sec-lbl sec-lbl-light">006 — Packaging</div>
+        <div class="pack-heading">PACK—<br>AGING</div>
+        <div class="pack-name">MOOV</div>
+        <div class="pack-sub">Packaging Design — Consumer Product</div>
+        <a class="view-btn dk" data-open="packaging"><span>View Project →</span></a>
+      </div>
+    </div>
+    <div class="pack-right">
+      <div class="pack-box">
+        <div class="pack-box-icon">⬡</div>
+        <div class="pack-box-label">Structural Design</div>
+      </div>
+      <div class="pack-box">
+        <div class="pack-box-icon">◫</div>
+        <div class="pack-box-label">Print Specification</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 PHOTOGRAPHY PANEL -->
   <div class="panel p-photo" data-p="8">
     <div class="ph-head">
-      <div class="pht-big rv"><span class="l1 split-target" data-delay-base="0">PHOTO-</span><span class="l2 split-target" data-delay-base="80">GRAPHY</span></div>
+      <div class="pht-big rv">
+        <span class="l1 split-target" data-delay-base="0">PHOTO-</span>
+        <span class="l2 split-target" data-delay-base="80">GRAPHY</span>
+      </div>
       <div class="ph-dr rv d2">
-        <p>"Every frame is a decision. Every image, a point of view."</p>
+        <p>"Photography is about focus. Every frame is a chosen point of view, designed to capture exactly what matters."</p>
         <p>Product, still life &amp; commercial — building narratives through light and stillness.</p>
-        <div class="ph-stats"><div><div class="sn">07</div><div class="sl">Series</div></div><div><div class="sn">120+</div><div class="sl">Images</div></div><div><div class="sn">03</div><div class="sl">Genres</div></div></div>
+        <div class="ph-stats">
+          <div>
+            <div class="sn">07</div>
+            <div class="sl">Series</div>
+          </div>
+          <div>
+            <div class="sn">120+</div>
+            <div class="sl">Images</div>
+          </div>
+          <div>
+            <div class="sn">03</div>
+            <div class="sl">Genres</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="photo-grid">
-      <div class="pc c1 pr d1"><div class="pc-inner"><div class="ph-ic"><span class="ph-sym">◎</span></div></div><div class="pc-ov"></div><div class="pc-cap"><div class="ct">Pure Deep Oil</div><div class="cc">Product</div></div></div>
-      <div class="pc c2 pr d2"><div class="pc-inner"><div class="ph-ic"><span class="ph-sym">◉</span></div></div><div class="pc-ov"></div><div class="pc-cap"><div class="ct">Ginger Splash</div><div class="cc">Commercial</div></div></div>
-      <div class="pc c3 pr d3"><div class="pc-inner"><div class="ph-ic"><span class="ph-sym">◎</span></div></div><div class="pc-ov"></div><div class="pc-cap"><div class="ct">Still Life</div><div class="cc">Editorial</div></div></div>
-      <div class="pc c4 pr d4"><div class="pc-inner"><div class="ph-ic"><span class="ph-sym">◈</span></div></div><div class="pc-ov"></div><div class="pc-cap"><div class="ct">Dark Tones</div><div class="cc">Abstract</div></div></div>
-      <div class="pc c5 pr d5"><div class="pc-inner"><div class="ph-ic"><span class="ph-sym">◉</span></div></div><div class="pc-ov"></div><div class="pc-cap"><div class="ct">Soft Light</div><div class="cc">Portrait</div></div></div>
+      <div class="pc c1 pr d1">
+        <div class="pc-inner">
+          <img src="images/photo-pure-deep-oil.jpg" alt="Pure Deep Oil" class="pc-img">
+        </div>
+        <div class="pc-ov"></div>
+        <div class="pc-cap">
+          <div class="ct">Pure Deep Oil</div>
+          <div class="cc">Product</div>
+        </div>
+      </div>
+      <div class="pc c2 pr d2">
+        <div class="pc-inner">
+          <img src="images/photo-ginger-lemon-splash-detail.jpg" alt="Ginger Splash" class="pc-img">
+        </div>
+        <div class="pc-ov"></div>
+        <div class="pc-cap">
+          <div class="ct">Ginger Splash</div>
+          <div class="cc">Commercial</div>
+        </div>
+      </div>
+      <div class="pc c3 pr d3">
+        <div class="pc-inner">
+          <img src="images/photo-dark-studio.jpg" alt="Still Life" class="pc-img">
+        </div>
+        <div class="pc-ov"></div>
+        <div class="pc-cap">
+          <div class="ct">Still Life</div>
+          <div class="cc">Editorial</div>
+        </div>
+      </div>
+      <div class="pc c4 pr d4">
+        <div class="pc-inner">
+          <img src="images/photo-dark-tones.jpg" alt="Dark Tones" class="pc-img">
+        </div>
+        <div class="pc-ov"></div>
+        <div class="pc-cap">
+          <div class="ct">Dark Tones</div>
+          <div class="cc">Abstract</div>
+        </div>
+      </div>
+      <div class="pc c5 pr d5">
+        <div class="pc-inner">
+          <img src="images/photo-soft-light.jpg" alt="Soft Light" class="pc-img">
+        </div>
+        <div class="pc-ov"></div>
+        <div class="pc-cap">
+          <div class="ct">Soft Light</div>
+          <div class="cc">Portrait</div>
+        </div>
+      </div>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;width:100%;flex-shrink:0" class="rv d3">
-      <span class="sec-lbl" style="margin:0">007 — Visual Archive</span>
+    <div class="photo-footer rv d3">
+      <span class="sec-lbl sec-lbl-inline">007 — Visual Archive</span>
       <a class="view-btn" data-open="photography"><span>Full Gallery →</span></a>
     </div>
   </div>
 
   <!-- 9 CONTACT -->
   <div class="panel p-contact" data-p="9">
-    <svg class="wv plx" data-plx="0.2" style="right:0;bottom:0;width:38%;height:100%;opacity:.13" viewBox="0 0 380 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <svg class="wv plx contact-wave" data-plx="0.2" viewBox="0 0 380 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <path d="M390 0C308 82,368 162,278 262C188 362,282 442,230 562C178 682,262 700,262 700L390 700Z" fill="#4aa3f0"/>
       <path d="M390 100C322 168,372 248,298 348C224 448,308 528,266 645L390 645Z" fill="#8ec8f7" opacity=".45"/>
     </svg>
     <div class="rv">
-      <div class="sec-lbl" style="color:var(--bl)">008 — Let's Talk</div>
+      <div class="sec-lbl sec-lbl-light">008 — Let's Talk</div>
       <div class="ct-big split-target" data-delay-base="0">Got a<br><span>project?</span><br>Let's build.</div>
     </div>
     <div class="ct-links rv d2">
-      <a href="/cdn-cgi/l/email-protection#94fcf1f8f8fbd4e7e0f1e2f1faf6f5faf0f5baf7fbf9" class="cl"><span class="__cf_email__" data-cfemail="6b030e0707042b181f0e1d0e05090a050f0a45080406">[email&#160;protected]</span></a>
-      <div class="c-dv"></div><a href="#" class="cl">Instagram</a>
-      <div class="c-dv"></div><a href="#" class="cl">Behance</a>
-      <div class="c-dv"></div><a href="#" class="cl">LinkedIn</a>
+      <a href="mailto:stevenbanda01@gmail.com" class="cl" target="_blank" rel="noopener">Email</a>
+      <div class="c-dv"></div>
+      <a href="https://www.instagram.com/steelo_and_co/" class="cl" target="_blank" rel="noopener">Instagram</a>
+      <div class="c-dv"></div>
+      <a href="https://wa.me/+264814726191" class="cl" target="_blank" rel="noopener">WhatsApp</a>
+      <div class="c-dv"></div>
+      <a href="https://www.linkedin.com/in/steven-banda-nam" class="cl" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="ct-foot"><div class="cf-c">© 2024 Steven Banda.</div><div class="cf-i">SB</div></div>
+    <div class="ct-foot">
+      <div class="cf-c">© 2026 Steven Banda.</div>
+      <div class="cf-i">SB</div>
+    </div>
   </div>
 
+</div><!-- /h-track -->
+</div><!-- /v-home -->
+
+<!-- ══════════════════════════════════════
+     PROJECT VIEWS
+══════════════════════════════════════ -->
+
+<!-- 3D DESIGN -->
+<div class="view pv" id="v-3d">
+  <div class="pv-inner">
+    <div class="pv-hero rv">
+      <div>
+        <div class="sec-lbl">003 — 3D Design</div>
+        <div class="pv-title">Unseen<br><span class="out">Opulence</span></div>
+      </div>
+      <div class="pv-meta">
+        <p class="pv-desc">"A 3D jewellery design collection exploring the theme of LUXURY REDEFINED — rendered with cinematic light and precision."</p>
+        <div class="pv-tags">
+          <span class="pv-tag">3D Rendering</span>
+          <span class="pv-tag">Rhino 3D</span>
+          <span class="pv-tag">Product Visualisation</span>
+          <span class="pv-tag">Jewellery</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-callout rv d1">
+      <div class="fc-label">Featured<br>Project</div>
+      <p class="fc-text">My submission for a 3D jewelry design competition hosted by DebMarine — "Shining Lights" 2024. I placed top 6 in the entire country. Built from conception to execution in Rhino 3D.</p>
+    </div>
+    <div class="img-grid-asymm rv d2">
+      <div class="img-cell img-cell-tall">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/3d-unseen-opulence-hero.jpg" alt="Unseen Opulence hero render" class="img-cover img-380">
+        </div>
+      </div>
+      <div class="img-stack">
+        <div class="img-cell">
+          <div class="img-reveal"></div>
+          <div class="img-cell-inner">
+            <img src="images/3d-unseen-opulence-detail-1.jpg" alt="3D jewellery detail" class="img-cover img-183">
+          </div>
+        </div>
+        <div class="img-cell">
+          <div class="img-reveal"></div>
+          <div class="img-cell-inner">
+            <img src="images/3d-unseen-opulence-detail-2.jpg" alt="3D jewellery detail" class="img-cover img-183">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">The Renders</div>
+      <p class="pv-section-body">Each piece was modelled and rendered to capture light on precious metals and gemstones. Focus: <strong>macro-scale detail</strong> — craftsmanship only visible under extreme magnification.</p>
+    </div>
+    <div class="img-grid-3 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/3d-render-bracelet.jpg" alt="3D bracelet render" class="img-cover img-220">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/3d-render-diamond.jpg" alt="3D diamond render" class="img-cover img-220">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/3d-render-ring.jpg" alt="3D ring render" class="img-cover img-220">
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Process</div>
+      <p class="pv-section-body">Sculpted with precision geometry, lit via three-point HDRI. <strong>Materials built from scratch</strong> — custom IOR values, subsurface scattering on pearls, physically accurate metal shaders.</p>
+    </div>
+    <div class="img-grid-2 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/3d-wireframe.jpg" alt="3D wireframe" class="img-cover img-260">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/3d-final-render.jpg" alt="3D final render" class="img-cover img-260">
+        </div>
+      </div>
+    </div>
+    <div class="pv-back rv">
+      <a class="view-btn" data-go="home"><span>← Back to portfolio</span></a>
+    </div>
+  </div>
 </div>
+
+<!-- POSTER DESIGN -->
+<div class="view pv" id="v-poster">
+  <div class="pv-inner">
+    <div class="pv-hero rv">
+      <div>
+        <div class="sec-lbl">004 — Poster Design</div>
+        <div class="pv-title">Poster<br><span class="out">Design</span></div>
+      </div>
+      <div class="pv-meta">
+        <p class="pv-desc">"A collection of editorial and event poster work — exploring bold composition and expressive type."</p>
+        <div class="pv-tags">
+          <span class="pv-tag">Typography</span>
+          <span class="pv-tag">Print Design</span>
+          <span class="pv-tag">Editorial</span>
+          <span class="pv-tag">Illustrator</span>
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Bold Informational</div>
+      <p class="pv-section-body">Exploring the boundaries between legibility and expression. Each poster treats <strong>type as image</strong> — distorted, layered, and broken to create visual tension.</p>
+    </div>
+    <div class="img-grid-3 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/poster-typographic-1.jpg" alt="Typographic poster 1" class="img-cover img-490">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/poster-typographic-2.jpg" alt="Typographic poster 2" class="img-cover img-510">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/poster-typographic-3.jpg" alt="Typographic poster 3" class="img-cover img-490">
+        </div>
+      </div>
+    </div>
+    <div class="feat-callout rv d1">
+      <div class="fc-label">Poster<br>Design</div>
+      <p class="fc-text">Clean, heavy-hitting layouts designed for maximum legibility. Thick letterforms and high-contrast accents give every message a sense of urgency and structure.</p>
+    </div>
+    <div class="img-grid-2 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/poster-event-a.jpg" alt="Event poster A" class="img-cover img-900">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/poster-event-b.jpg" alt="Event poster B" class="img-cover img-820">
+        </div>
+      </div>
+    </div>
+    <div class="pv-back rv">
+      <a class="view-btn" data-go="home"><span>← Back to portfolio</span></a>
+    </div>
+  </div>
 </div>
 
-<!-- ══════════════════ PROJECT VIEWS ══════════════════ -->
-
-<div class="view pv" id="v-3d"><div class="pv-inner">
-  <div class="pv-hero rv"><div><div class="sec-lbl">003 — 3D Design</div><div class="pv-title">Unseen<br><span class="out">Opulence</span></div></div><div class="pv-meta"><p class="pv-desc">"A 3D jewellery visualisation series exploring the hidden beauty of luxury pieces — rendered with cinematic light and precision."</p><div class="pv-tags"><span class="pv-tag">3D Rendering</span><span class="pv-tag">Blender / Cinema 4D</span><span class="pv-tag">Product Visualisation</span><span class="pv-tag">Jewellery</span></div></div></div>
-  <div class="feat-callout rv d1"><div class="fc-label">Featured<br>Project</div><p class="fc-text">Unseen Opulence reimagines fine jewellery as high-concept art objects. Each piece is rendered to reveal detail the naked eye often misses — facets, reflections, structure.</p></div>
-  <div class="img-grid-asymm rv d2"><div class="img-cell" style="height:380px"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:380px;background:linear-gradient(145deg,#d8dde0,#c0c8cc);font-size:40px;letter-spacing:0">💍</div></div></div><div style="display:flex;flex-direction:column;gap:8px"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:183px;background:linear-gradient(145deg,#1a1a1a,#111);font-size:28px;letter-spacing:0">💎</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:183px;background:linear-gradient(145deg,#282828,#1a1a1a);font-size:28px;letter-spacing:0">💎</div></div></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">The Renders</div><p class="pv-section-body">Each piece was modelled and rendered to capture light on precious metals and gemstones. Focus: <strong>macro-scale detail</strong> — craftsmanship only visible under extreme magnification.</p></div>
-  <div class="img-grid-3 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:220px;background:linear-gradient(145deg,#1e1e1e,#0a0a0a);font-size:20px;letter-spacing:0">🪙</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:220px;background:linear-gradient(145deg,#2a2a2a,#151515);font-size:20px;letter-spacing:0">💎</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:220px;background:linear-gradient(145deg,#181818,#080808);font-size:20px;letter-spacing:0">💍</div></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Process</div><p class="pv-section-body">Sculpted with precision geometry, lit via three-point HDRI. <strong>Materials built from scratch</strong> — custom IOR values, subsurface scattering on pearls, physically accurate metal shaders.</p></div>
-  <div class="img-grid-2 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:260px;background:linear-gradient(145deg,#c8c8c8,#909090)">WIREFRAME</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:260px;background:linear-gradient(145deg,#1a1a1a,#0a0a0a);font-size:12px;letter-spacing:.1em">FINAL RENDER</div></div></div></div>
-  <div style="display:flex;justify-content:flex-end;margin-top:40px" class="rv"><a class="view-btn" data-go="home"><span>← Back to portfolio</span></a></div>
-</div></div>
-
-<div class="view pv" id="v-poster"><div class="pv-inner">
-  <div class="pv-hero rv"><div><div class="sec-lbl">004 — Poster Design</div><div class="pv-title">Poster<br><span class="out">Design</span></div></div><div class="pv-meta"><p class="pv-desc">"A collection of editorial, event, and typographic poster work — exploring bold composition, expressive type, and visual tension."</p><div class="pv-tags"><span class="pv-tag">Typography</span><span class="pv-tag">Print Design</span><span class="pv-tag">Editorial</span><span class="pv-tag">Illustrator</span></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Typographic Series</div><p class="pv-section-body">Exploring the boundaries between legibility and expression. Each poster treats <strong>type as image</strong> — distorted, layered, and broken to create visual tension.</p></div>
-  <div class="img-grid-3 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:360px;background:linear-gradient(160deg,#0a0a0a,#1a1a2a);font-size:10px;letter-spacing:.2em">POSTER I</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:360px;background:linear-gradient(160deg,#1a0f06,#0d0804);font-size:10px;letter-spacing:.2em">POSTER II</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:360px;background:linear-gradient(160deg,#080f1a,#050a10);font-size:10px;letter-spacing:.2em">POSTER III</div></div></div></div>
-  <div class="feat-callout rv d1"><div class="fc-label">Poster<br>Design</div><p class="fc-text">Bold condensed display typography — large, high-contrast letterforms used as both structural and expressive elements. Type at the scale of architecture.</p></div>
-  <div class="img-grid-2 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:300px;background:linear-gradient(145deg,#0d0d1a,#06060f);font-size:10px;letter-spacing:.2em">EVENT A</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:300px;background:linear-gradient(145deg,#1a0a06,#100604);font-size:10px;letter-spacing:.2em">EVENT B</div></div></div></div>
-  <div style="display:flex;justify-content:flex-end;margin-top:40px" class="rv"><a class="view-btn" data-go="home"><span>← Back to portfolio</span></a></div>
-</div></div>
-
-<div class="view pv" id="v-brand"><div class="pv-inner">
-  <div class="pv-hero rv"><div><div class="sec-lbl">005 — Brand Identity</div><div class="pv-title">Afrocode<br><span class="out">Café</span></div></div><div class="pv-meta"><p class="pv-desc">"A complete brand identity system for Afrocode Café — a tech-inspired coffee brand based in Windhoek, Namibia. From logo to van wrap."</p><div class="pv-tags"><span class="pv-tag">Logo Design</span><span class="pv-tag">Business Cards</span><span class="pv-tag">Email Signature</span><span class="pv-tag">Brand Guidelines</span><span class="pv-tag">Merchandise</span></div></div></div>
-  <div class="feat-callout rv d1"><div class="fc-label">Afrocode<br>Café</div><p class="fc-text">Afrocode Café merges African cultural motifs with a tech-forward aesthetic — geometric, structured, and rooted. Located at #34 Independence Avenue, Windhoek, Namibia.</p></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Logo System</div><p class="pv-section-body">The mark is built from a geometric icon inspired by traditional African architectural patterns, combined with a clean all-caps wordmark. Two colour variants — <strong>gold on white</strong> and <strong>gold on dark</strong>.</p></div>
-  <div class="img-grid-2 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:220px;background:#f8f6f2;color:#b8860b;font-size:11px;letter-spacing:.2em">AFROCODE CAFÉ — LIGHT</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:220px;background:#1a1410;color:#c8a020;font-size:11px;letter-spacing:.2em">AFROCODE CAFÉ — DARK</div></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Business Cards</div><p class="pv-section-body">Cards for Steven Banda, Owner — geometric brand pattern on the reverse. <strong>Front &amp; back designed</strong> with full bleed pattern treatment.</p></div>
-  <div class="brand-detail-grid rv d2"><div class="bd-card"><div class="bd-card-icon">▣</div><div class="bd-card-title">Business Card Front</div><div class="bd-card-sub">Name, title, contact details</div></div><div class="bd-card"><div class="bd-card-icon">◫</div><div class="bd-card-title">Business Card Back</div><div class="bd-card-sub">Full-bleed geometric pattern</div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Brand Extensions</div><p class="pv-section-body">Extended across touchpoints — <strong>coffee cup wraps</strong>, staff t-shirts, tote bags, aprons, and a full van livery.</p></div>
-  <div class="img-grid-3 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:240px;background:#e8e2d4;color:#888;font-size:9px;letter-spacing:.2em">COFFEE CUP</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:240px;background:#1a1a1a;color:#666;font-size:9px;letter-spacing:.2em">STAFF T-SHIRT</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:240px;background:#f0ece4;color:#888;font-size:9px;letter-spacing:.2em">TOTE BAG</div></div></div></div>
-  <div class="img-cell rv d1" style="margin:8px 0"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:200px;background:#e8eaf0;color:#888;font-size:9px;letter-spacing:.2em">VAN LIVERY</div></div></div>
-  <div style="display:flex;justify-content:flex-end;margin-top:40px" class="rv"><a class="view-btn" data-go="home"><span>← Back to portfolio</span></a></div>
-</div></div>
-
-<div class="view pv" id="v-packaging"><div class="pv-inner">
-  <div class="pv-hero rv"><div><div class="sec-lbl">006 — Packaging</div><div class="pv-title">MOOV<br><span class="out">Packaging</span></div></div><div class="pv-meta"><p class="pv-desc">"Complete packaging design for MOOV — a flavoured milk brand for Namibia. Structural packaging, print-ready artwork, and a full campaign poster."</p><div class="pv-tags"><span class="pv-tag">Packaging Design</span><span class="pv-tag">Structural Design</span><span class="pv-tag">Print Artwork</span><span class="pv-tag">Campaign Poster</span></div></div></div>
-  <div class="feat-callout rv d1"><div class="fc-label">MOOV</div><p class="fc-text">"Keep it MOOVING!" — MOOV is the fuel for the hustle. Available in Cocoa Kick and Watermelon Burst. 750ml carton. Manufactured by Moov (Pty) Ltd, Windhoek.</p></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">The Carton</div><p class="pv-section-body">A 750ml Tetra Pak-style carton with bold flavour-coded colourways. <strong>Cocoa Kick</strong> — deep brown and cream. <strong>Watermelon Burst</strong> — vibrant pink with illustrated fruit.</p></div>
-  <div class="img-grid-3 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:320px;background:linear-gradient(145deg,#3a1a0a,#280d05);color:rgba(255,255,255,.2);font-size:10px;letter-spacing:.15em">COCOA KICK</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:320px;background:linear-gradient(145deg,#d44870,#b03050);color:rgba(255,255,255,.25);font-size:10px;letter-spacing:.15em">WATERMELON BURST</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:320px;background:linear-gradient(145deg,#1a1a2a,#0d0d18);color:rgba(255,255,255,.15);font-size:9px;letter-spacing:.15em">BOTH VARIANTS</div></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Campaign Poster</div><p class="pv-section-body"><strong>"Fuel Your Flow With MOOV"</strong> — in-store poster featuring both variants. Designed for A1 print and digital display.</p></div>
-  <div class="img-cell rv d2" style="margin:24px 0"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:320px;background:linear-gradient(145deg,#7040a8,#5030a0);flex-direction:column;gap:12px"><div style="font-family:'Bebas Neue',sans-serif;font-size:32px;color:white;letter-spacing:.05em">FUEL YOUR FLOW WITH MOOV</div><div style="font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.6);text-transform:uppercase">Campaign Poster — A1 / Digital</div></div></div></div>
-  <div class="brand-detail-grid rv d1"><div class="bd-card"><div class="bd-card-icon">⬡</div><div class="bd-card-title">Structural Dieline</div><div class="bd-card-sub">750ml Tetra Pak — fold, score, bleed</div></div><div class="bd-card"><div class="bd-card-icon">◫</div><div class="bd-card-title">Print Artwork</div><div class="bd-card-sub">300dpi CMYK — both variants</div></div></div>
-  <div style="display:flex;justify-content:flex-end;margin-top:40px" class="rv"><a class="view-btn" data-go="home"><span>← Back to portfolio</span></a></div>
-</div></div>
-
-<div class="view pv" id="v-photography"><div class="pv-inner">
-  <div class="pv-hero rv"><div><div class="sec-lbl">007 — Photography</div><div class="pv-title">PHOTO-<br><span class="out">GRAPHY</span></div></div><div class="pv-meta"><p class="pv-desc">"A visual archive spanning product, commercial, and still life photography. Every image built around light, contrast, and intent."</p><div class="pv-tags"><span class="pv-tag">Product Photography</span><span class="pv-tag">Commercial</span><span class="pv-tag">Still Life</span><span class="pv-tag">Lightroom</span></div></div></div>
-  <div class="photo-editorial rv d1">
-    <div class="pe-cell bg-ph1"><div class="pe-cell-inner"><div class="ph-ic"><span class="ph-sym">◎</span></div></div><div class="pe-cell-ov"></div><div class="cap"><div class="ct">Pure Deep Oil</div><div class="cc">Product</div></div></div>
-    <div class="pe-cell bg-ph2"><div class="pe-cell-inner"><div class="ph-ic"><span class="ph-sym">◉</span></div></div><div class="pe-cell-ov"></div><div class="cap"><div class="ct">Pale &amp; Clean</div><div class="cc">Light Study</div></div></div>
-    <div class="pe-cell bg-ph3"><div class="pe-cell-inner"><div class="ph-ic"><span class="ph-sym">◎</span></div></div><div class="pe-cell-ov"></div><div class="cap"><div class="ct">Dark Studio</div><div class="cc">Editorial</div></div></div>
-    <div class="pe-cell bg-ph4"><div class="pe-cell-inner"><div class="ph-ic"><span class="ph-sym">◈</span></div></div><div class="pe-cell-ov"></div><div class="cap"><div class="ct">Ginger &amp; Citrus</div><div class="cc">Commercial</div></div></div>
-    <div class="pe-cell bg-ph5"><div class="pe-cell-inner"><div class="ph-ic"><span class="ph-sym">◉</span></div></div><div class="pe-cell-ov"></div><div class="cap"><div class="ct">Soft Surface</div><div class="cc">Still Life</div></div></div>
+<!-- BRAND IDENTITY -->
+<div class="view pv" id="v-brand">
+  <div class="pv-inner">
+    <div class="pv-hero rv">
+      <div>
+        <div class="sec-lbl">005 — Brand Identity</div>
+        <div class="pv-title">Afrocode<br><span class="out">Café</span></div>
+      </div>
+      <div class="pv-meta">
+        <p class="pv-desc">"A complete brand identity system for Afrocode Café — a tech-inspired coffee brand concept. From logo to van wrap."</p>
+        <div class="pv-tags">
+          <span class="pv-tag">Logo Design</span>
+          <span class="pv-tag">Business Cards</span>
+          <span class="pv-tag">Email Signature</span>
+          <span class="pv-tag">Brand Guidelines</span>
+          <span class="pv-tag">Merchandise</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-callout rv d1">
+      <div class="fc-label">Afrocode<br>Café</div>
+      <p class="fc-text">Afrocode Café merges African cultural motifs with a tech-forward aesthetic — geometric, structured, and rooted.</p>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Logo System</div>
+      <p class="pv-section-body">The mark is built from a geometric icon inspired by traditional African architectural patterns, combined with a clean all-caps wordmark. Two variants — <strong>Color</strong> and <strong>Black</strong>.</p>
+    </div>
+    <div class="img-grid-2 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/afrocodelogo.jpg" alt="Afrocode Café colour logo" class="img-cover img-380">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/afrocodebwlogo.jpg" alt="Afrocode Café black and white logo" class="img-cover img-380">
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Business Cards</div>
+      <p class="pv-section-body">Cards for the Owner — geometric brand pattern on the reverse. <strong>Front &amp; back designed</strong> with full bleed pattern treatment.</p>
+    </div>
+    <div class="brand-detail-grid rv d2">
+      <img src="images/bussinesscard.jpg" alt="Business card front" class="img-cover-full">
+      <img src="images/bussinesscardback.jpg" alt="Business card back" class="img-cover-full">
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Brand Extensions</div>
+      <p class="pv-section-body">Extended across touchpoints — <strong>coffee cup wraps</strong>, staff t-shirts, tote bags, aprons, and a full van livery.</p>
+    </div>
+    <div class="img-grid-3 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/coffeecup.jpg" alt="Coffee cup wrap" class="img-cover img-380">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/staffshirt.jpg" alt="Staff t-shirt" class="img-cover img-380">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/totebag.jpg" alt="Tote bag" class="img-cover img-380">
+        </div>
+      </div>
+    </div>
+    <div class="img-cell img-cell-van rv d1">
+      <div class="img-reveal"></div>
+      <div class="img-cell-inner">
+        <img src="images/van.jpg" alt="Van livery" class="img-cover img-380">
+      </div>
+    </div>
+    <div class="pv-back rv">
+      <a class="view-btn" data-go="home"><span>← Back to portfolio</span></a>
+    </div>
   </div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Product Photography</div><p class="pv-section-body">Commercial product work for local Namibian brands. The <strong>Pure Deep Oil</strong> shoot used a warm rust-red backdrop with botanical props — lit with a large softbox and reflector.</p></div>
-  <div class="img-grid-asymm rv d2"><div class="img-cell" style="height:340px"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:340px;background:linear-gradient(135deg,#5e2508,#3a1504);color:rgba(255,255,255,.2);font-size:10px;letter-spacing:.15em">PURE DEEP OIL — HERO</div></div></div><div style="display:flex;flex-direction:column;gap:8px"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:163px;background:linear-gradient(145deg,#7a3010,#4a1e08);color:rgba(255,255,255,.2);font-size:9px;letter-spacing:.15em">DETAIL</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:163px;background:linear-gradient(145deg,#4a1808,#2e1005);color:rgba(255,255,255,.2);font-size:9px;letter-spacing:.15em">FLAT LAY</div></div></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Ginger Lemon Splash</div><p class="pv-section-body">For Ndapamewa Ginger Lemon Juice — shot against a clean lavender backdrop. The series captures the product in <strong>motion — water splashing</strong>, lemon slices mid-air. High-speed flash at 1/4000s.</p></div>
-  <div class="img-grid-2 rv d2"><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:300px;background:linear-gradient(145deg,#d8d0e8,#b8b0cc);color:rgba(0,0,0,.2);font-size:9px;letter-spacing:.15em">SPLASH HERO</div></div></div><div class="img-cell"><div class="img-reveal"></div><div class="img-cell-inner"><div class="img-ph" style="height:300px;background:linear-gradient(145deg,#c8c0dc,#a8a0c0);color:rgba(0,0,0,.2);font-size:9px;letter-spacing:.15em">DETAIL</div></div></div></div>
-  <div class="pv-section rv d1"><div class="pv-section-title">Series Archive</div><p class="pv-section-body">An expanding archive spanning different subjects, moods, and light conditions.</p></div>
-  <div class="scroll-row rv d2">
-    <div class="sr-cell bg-ph1"><div class="sr-cell-inner"></div><div class="sr-label">Series I — Light</div></div>
-    <div class="sr-cell bg-ph2"><div class="sr-cell-inner"></div><div class="sr-label">Series II — Shadow</div></div>
-    <div class="sr-cell bg-ph3"><div class="sr-cell-inner"></div><div class="sr-label">Series III — Form</div></div>
-    <div class="sr-cell bg-ph4"><div class="sr-cell-inner"></div><div class="sr-label">Series IV — Motion</div></div>
-    <div class="sr-cell bg-ph5"><div class="sr-cell-inner"></div><div class="sr-label">Series V — Stillness</div></div>
-    <div class="sr-cell bg-bx"><div class="sr-cell-inner"></div><div class="sr-label" style="color:var(--mt)">Series VI — Colour</div></div>
+</div>
+
+<!-- PACKAGING -->
+<div class="view pv" id="v-packaging">
+  <div class="pv-inner">
+    <div class="pv-hero rv">
+      <div>
+        <div class="sec-lbl">006 — Packaging</div>
+        <div class="pv-title">MOOV<br><span class="out">Packaging</span></div>
+      </div>
+      <div class="pv-meta">
+        <p class="pv-desc">"Complete packaging design for MOOV — a flavoured milk brand concept. Structural packaging, print-ready artwork, and a full campaign poster."</p>
+        <div class="pv-tags">
+          <span class="pv-tag">Packaging Design</span>
+          <span class="pv-tag">Structural Design</span>
+          <span class="pv-tag">Print Artwork</span>
+          <span class="pv-tag">Campaign Poster</span>
+        </div>
+      </div>
+    </div>
+    <div class="feat-callout rv d1">
+      <div class="fc-label">MOOV</div>
+      <p class="fc-text">"Keep it MOOVING!" — MOOV is the fuel for the hustle. Available in Cocoa Kick and Watermelon Burst. 750ml carton.</p>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">The Carton</div>
+      <p class="pv-section-body">A 750ml Tetra Pak-style carton with bold flavour-coded colourways. <strong>Cocoa Kick</strong> — deep brown and cream. <strong>Watermelon Burst</strong> — vibrant pink with illustrated fruit.</p>
+    </div>
+    <div class="img-grid-3 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/moov-cocoa-kick.jpg" alt="MOOV Cocoa Kick carton" class="img-cover img-320">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/moov-watermelon-burst.jpg" alt="MOOV Watermelon Burst carton" class="img-cover img-320">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/moov-both-variants.jpg" alt="MOOV both variants" class="img-cover img-320">
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Campaign Poster</div>
+      <p class="pv-section-body"><strong>"Fuel Your Flow With MOOV"</strong> — in-store poster featuring both variants. Designed for A1 print and digital display.</p>
+    </div>
+    <div class="img-cell img-cell-poster rv d2">
+      <div class="img-reveal"></div>
+      <div class="img-cell-inner">
+        <img src="images/moov-campaign-poster.jpg" alt="MOOV campaign poster" class="img-cover img-820">
+      </div>
+    </div>
+    <div class="brand-detail-grid rv d1">
+      <div class="bd-card">
+        <div class="bd-card-icon">⬡</div>
+        <div class="bd-card-title">Structural Dieline</div>
+        <div class="bd-card-sub">750ml Tetra Pak — fold, score, bleed</div>
+      </div>
+      <div class="bd-card">
+        <div class="bd-card-icon">◫</div>
+        <div class="bd-card-title">Print Artwork</div>
+        <div class="bd-card-sub">300dpi CMYK — both variants</div>
+      </div>
+    </div>
+    <div class="pv-back rv">
+      <a class="view-btn" data-go="home"><span>← Back to portfolio</span></a>
+    </div>
   </div>
-  <div style="display:flex;justify-content:flex-end;margin-top:40px" class="rv"><a class="view-btn" data-go="home"><span>← Back to portfolio</span></a></div>
-</div></div>
+</div>
 
-
+<!-- PHOTOGRAPHY -->
+<div class="view pv" id="v-photography">
+  <div class="pv-inner">
+    <div class="pv-hero rv">
+      <div>
+        <div class="sec-lbl">007 — Photography</div>
+        <div class="pv-title">PHOTO-<br><span class="out">GRAPHY</span></div>
+      </div>
+      <div class="pv-meta">
+        <p class="pv-desc">"A visual archive spanning product, commercial, and still life photography. Every image built around light, contrast, and intent."</p>
+        <div class="pv-tags">
+          <span class="pv-tag">Product Photography</span>
+          <span class="pv-tag">Commercial</span>
+          <span class="pv-tag">Still Life</span>
+        </div>
+      </div>
+    </div>
+    <div class="photo-editorial rv d1">
+      <div class="pe-cell bg-ph1">
+        <div class="pe-cell-inner">
+          <img src="images/photo-pure-deep-oil.jpg" alt="Pure Deep Oil" class="pe-img">
+        </div>
+        <div class="pe-cell-ov"></div>
+        <div class="cap">
+          <div class="ct">Pure Deep Oil</div>
+          <div class="cc">Product</div>
+        </div>
+      </div>
+      <div class="pe-cell bg-ph2">
+        <div class="pe-cell-inner">
+          <img src="images/photo-pale-clean.jpg" alt="Pale and Clean" class="pe-img">
+        </div>
+        <div class="pe-cell-ov"></div>
+        <div class="cap">
+          <div class="ct">Pale &amp; Clean</div>
+          <div class="cc">Light Study</div>
+        </div>
+      </div>
+      <div class="pe-cell bg-ph3">
+        <div class="pe-cell-inner">
+          <img src="images/photo-dark-studio.jpg" alt="Dark Studio" class="pe-img">
+        </div>
+        <div class="pe-cell-ov"></div>
+        <div class="cap">
+          <div class="ct">Dark Studio</div>
+          <div class="cc">Editorial</div>
+        </div>
+      </div>
+      <div class="pe-cell bg-ph4">
+        <div class="pe-cell-inner">
+          <img src="images/photo-ginger-citrus.jpg" alt="Ginger and Citrus" class="pe-img">
+        </div>
+        <div class="pe-cell-ov"></div>
+        <div class="cap">
+          <div class="ct">Ginger &amp; Citrus</div>
+          <div class="cc">Commercial</div>
+        </div>
+      </div>
+      <div class="pe-cell bg-ph5">
+        <div class="pe-cell-inner">
+          <img src="images/photo-soft-surface.jpg" alt="Soft Surface" class="pe-img">
+        </div>
+        <div class="pe-cell-ov"></div>
+        <div class="cap">
+          <div class="ct">Soft Surface</div>
+          <div class="cc">Still Life</div>
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Product Photography</div>
+      <p class="pv-section-body">Commercial product work for local and international brands. The <strong>Pure Deep Oil</strong> shoot used a warm rust-red backdrop with botanical props — lit with a large softbox and reflector.</p>
+    </div>
+    <div class="img-grid-asymm rv d2">
+      <div class="img-cell img-cell-oil-hero">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/photo-pure-deep-oil-hero.jpg" alt="Pure Deep Oil hero shot" class="img-cover img-840">
+        </div>
+      </div>
+      <div class="img-stack">
+        <div class="img-cell">
+          <div class="img-reveal"></div>
+          <div class="img-cell-inner">
+            <img src="images/photo-pure-deep-oil-detail.jpg" alt="Pure Deep Oil detail" class="img-cover img-163">
+          </div>
+        </div>
+        <div class="img-cell">
+          <div class="img-reveal"></div>
+          <div class="img-cell-inner">
+            <img src="images/photo-pure-deep-oil-flatlay.jpg" alt="Pure Deep Oil flat lay" class="img-cover img-400">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Ginger Lemon Splash</div>
+      <p class="pv-section-body">For Ndapamewa Ginger Lemon Juice — shot against a clean lavender backdrop. The series captures the product in <strong>motion — water splashing</strong>, lemon slices mid-air. High-speed flash at 1/4000s.</p>
+    </div>
+    <div class="img-grid-2 rv d2">
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/photo-ginger-lemon-splash-hero.jpg" alt="Ginger Lemon splash hero" class="img-cover img-300">
+        </div>
+      </div>
+      <div class="img-cell">
+        <div class="img-reveal"></div>
+        <div class="img-cell-inner">
+          <img src="images/photo-ginger-lemon-splash-detail.jpg" alt="Ginger Lemon splash detail" class="img-cover img-300">
+        </div>
+      </div>
+    </div>
+    <div class="pv-section rv d1">
+      <div class="pv-section-title">Series Archive</div>
+      <p class="pv-section-body">An expanding archive spanning different subjects, moods, and light conditions.</p>
+    </div>
+    <div class="scroll-row rv d2">
+      <div class="sr-cell bg-ph1">
+        <div class="sr-cell-inner">
+          <img src="images/photo-series-light.jpg" alt="Series I Light" class="sr-img">
+        </div>
+      </div>
+      <div class="sr-cell bg-ph2">
+        <div class="sr-cell-inner">
+          <img src="images/photo-series-shadow.jpg" alt="Series II Shadow" class="sr-img">
+        </div>
+      </div>
+      <div class="sr-cell bg-ph3">
+        <div class="sr-cell-inner">
+          <img src="images/photo-series-form.jpg" alt="Series III Form" class="sr-img">
+        </div>
+      </div>
+      <div class="sr-cell bg-ph4">
+        <div class="sr-cell-inner">
+          <img src="images/photo-series-motion.jpg" alt="Series IV Motion" class="sr-img">
+        </div>
+      </div>
+      <div class="sr-cell bg-ph5">
+        <div class="sr-cell-inner">
+          <img src="images/photo-series-stillness.jpg" alt="Series V Stillness" class="sr-img">
+        </div>
+      </div>
+      <div class="sr-cell bg-bx">
+        <div class="sr-cell-inner">
+          <img src="images/photo-series-colour.jpg" alt="Series VI Colour" class="sr-img">
+        </div>
+      </div>
+    </div>
+    <div class="pv-back rv">
+      <a class="view-btn" data-go="home"><span>← Back to portfolio</span></a>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
