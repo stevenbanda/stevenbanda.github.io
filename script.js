@@ -41,8 +41,8 @@ function raf(){
   tick++;
   cx=lerp(cx,mx,.18); cy=lerp(cy,my,.18);
   rx=lerp(rx,mx,.07); ry=lerp(ry,my,.07);
-  if(curEl)  curEl.style.transform ='translate('+(cx-4)+'px,'+(cy-4)+'px)';
-  if(ringEl) ringEl.style.transform='translate('+(rx-18)+'px,'+(ry-18)+'px)';
+  if(curEl)  curEl.style.transform ='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
+  if(ringEl) ringEl.style.transform='translate('+rx+'px,'+ry+'px) translate(-50%,-50%)';
   if(curLbl) curLbl.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
   if(curView==='home'){
     curX=lerp(curX,tarX,.044);
@@ -286,4 +286,91 @@ setTimeout(function(){
   });
 }());
 
-}()); // end IIFE
+// ── HAMBURGER + MOBILE DRAWER ────────────────────────────
+(function(){
+  var burger   = document.getElementById('hamburger');
+  var drawer   = document.getElementById('nav-drawer');
+  var dmDrawer = document.getElementById('dm-btn-drawer');
+  if(!burger||!drawer) return;
+  var mOpen = false;
+  function toggleMenu(force){
+    mOpen = (force!==undefined) ? force : !mOpen;
+    burger.classList.toggle('open', mOpen);
+    drawer.classList.toggle('open', mOpen);
+    document.body.style.overflow = mOpen ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){ toggleMenu(); });
+  var dLinks = Array.prototype.slice.call(drawer.querySelectorAll('.drawer-link'));
+  for(var i=0;i<dLinks.length;i++){
+    (function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var idx = parseInt(a.getAttribute('data-nav'));
+        toggleMenu(false);
+        setTimeout(function(){ goTo(idx); }, 320);
+      });
+    })(dLinks[i]);
+  }
+  if(dmDrawer){
+    dmDrawer.addEventListener('click', function(){
+      var btn = document.getElementById('dm-btn');
+      if(btn) btn.click();
+    });
+  }
+  document.addEventListener('click', function(e){
+    if(mOpen && !drawer.contains(e.target) && !burger.contains(e.target)) toggleMenu(false);
+  });
+  window._updateDrawerActive = function(idx){
+    for(var i=0;i<dLinks.length;i++) dLinks[i].classList.toggle('on', parseInt(dLinks[i].getAttribute('data-nav'))===idx);
+  };
+}());
+
+// ── MOBILE: VERTICAL SCROLL ───────────────────────────────
+(function(){
+  if(window.innerWidth > 900) return;
+  var homeView = document.getElementById('v-home');
+  var trackEl  = document.getElementById('track');
+  if(!homeView||!trackEl) return;
+  homeView.style.overflowY  = 'auto';
+  homeView.style.overflowX  = 'hidden';
+  trackEl.style.display     = 'block';
+  trackEl.style.width       = '100%';
+  trackEl.style.height      = 'auto';
+  trackEl.style.transform   = 'none';
+  var pEls = Array.prototype.slice.call(trackEl.querySelectorAll('.panel'));
+  for(var i=0;i<pEls.length;i++){
+    pEls[i].style.width      = '100%';
+    pEls[i].style.height     = 'auto';
+    pEls[i].style.minHeight  = 'calc(100vh - 56px)';
+    pEls[i].style.flexShrink = '0';
+  }
+  // IntersectionObserver for active nav + reveals on scroll
+  var io = new IntersectionObserver(function(entries){
+    for(var e=0;e<entries.length;e++){
+      var entry = entries[e];
+      if(entry.isIntersecting){
+        var idx = parseInt(entry.target.getAttribute('data-p'));
+        if(isNaN(idx)) continue;
+        curPanel = idx;
+        if(window._updateDrawerActive) window._updateDrawerActive(idx);
+        var as = Array.prototype.slice.call(document.querySelectorAll('.n-links a[data-nav]'));
+        for(var a=0;a<as.length;a++) as[a].classList.toggle('on', parseInt(as[a].getAttribute('data-nav'))===idx);
+        if(pbEl) pbEl.style.width = ((idx/(N-1))*100)+'%';
+        if(navEl) navEl.classList.toggle('dark', idx===9);
+        var revEls = Array.prototype.slice.call(entry.target.querySelectorAll('.rv,.blur-in,.pr'));
+        for(var r=0;r<revEls.length;r++) revEls[r].classList.add('in');
+        triggerSplit(entry.target);
+      }
+    }
+  },{threshold:0.25});
+  for(var i=0;i<pEls.length;i++) io.observe(pEls[i]);
+  // Override goTo for mobile scroll
+  goTo = function(i){
+    if(i<0||i>=N) return;
+    curPanel = i;
+    pEls[i].scrollIntoView({behavior:'smooth',block:'start'});
+    if(window._updateDrawerActive) window._updateDrawerActive(i);
+  };
+}());
+
+}()); // end outer IIFE
